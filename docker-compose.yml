@@ -8,7 +8,7 @@ services:
       - "5432:5432"
     volumes:
       - "pgdata:/var/lib/postgresql"
-        
+  
   #  Mongo DB
   mongo:
     image: "mongo"
@@ -19,14 +19,13 @@ services:
       - "27017:27017"
     volumes:
       - "mongodata:/data/db"
-        
+  
   #  Rabbit Message Queue
   rabbitmq:
     image: "rabbitmq:3-management-alpine"
     ports:
       - "5672:5672"
       - "15672:15672"
-    
 
 volumes:
   pgdata:
