@@ -51,7 +51,10 @@ app.Lifetime.ApplicationStarted.Register(async void () =>
 app.Run();
 return;
 
-static IAsyncPolicy<HttpResponseMessage> GetPolicy() => HttpPolicyExtensions
-    .HandleTransientHttpError()
-    .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
-    .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
+static IAsyncPolicy<HttpResponseMessage> GetPolicy()
+{
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
+        .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
+}
