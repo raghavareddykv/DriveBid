@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "backend\src\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "backend\src\IdentityService\IdentityService.csproj", "{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "backend\src\GatewayService\GatewayService.csproj", "{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,18 @@ Global
 		{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8}.Release|x64.Build.0 = Release|Any CPU
 		{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8}.Release|x86.ActiveCfg = Release|Any CPU
 		{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8}.Release|x86.Build.0 = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|x64.Build.0 = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|x64.ActiveCfg = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|x64.Build.0 = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +94,6 @@ Global
 		{367D87B7-998D-4D0C-BC51-50AE572F3E4B} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 		{A48CB539-A2AC-43B1-BFA3-C43734FFCEFF} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 		{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
+		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 	EndGlobalSection
 EndGlobal
