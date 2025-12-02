@@ -64,6 +64,8 @@ internal static class HostingExtensions
 
                 // Use a large chunk size for diagnostic data in development where it will be redirected to a local file.
                 if (builder.Environment.IsDevelopment()) options.Diagnostics.ChunkSize = 1024 * 1024 * 10; // 10 MB
+
+                if (builder.Environment.IsEnvironment("Docker")) options.IssuerUri = "https://localhost:5001";
             })
             .AddInMemoryIdentityResources(Config.IdentityResources)
             .AddInMemoryApiScopes(Config.ApiScopes)
@@ -71,10 +73,7 @@ internal static class HostingExtensions
             .AddAspNetIdentity<ApplicationUser>()
             .AddProfileService<CustomProfileService>();
 
-        builder.Services.ConfigureApplicationCookie(options =>
-        {
-            options.Cookie.SameSite = SameSiteMode.Lax;
-        });
+        builder.Services.ConfigureApplicationCookie(options => { options.Cookie.SameSite = SameSiteMode.Lax; });
 
         builder.Services.AddAuthentication();
 
