@@ -10,6 +10,7 @@ const Search = () => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (searchTerm === "") setValue("");
   }, [searchTerm]);
 
