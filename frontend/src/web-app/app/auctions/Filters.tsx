@@ -1,24 +1,28 @@
 import { Button, ButtonGroup } from "flowbite-react";
 import { useParamsStore } from "@/hooks/useParamsStore";
-import { AiOutlineClockCircle, AiOutlineSortAscending } from "react-icons/ai";
-import { BsFillStopCircleFill, BsStopwatchFill } from "react-icons/bs";
+import { BsStopwatchFill } from "react-icons/bs";
 import { GiFinishLine, GiFlame } from "react-icons/gi";
+import {
+  TbCalendarEventFilled,
+  TbSortAscendingLetters,
+  TbSortDescending2Filled,
+} from "react-icons/tb";
 
 const pageSizeButtons = [4, 8, 12];
 const orderButtons = [
   {
     label: "Alphabetical",
-    icon: AiOutlineSortAscending,
+    icon: TbSortAscendingLetters,
     value: "make",
   },
   {
     label: "End Date",
-    icon: AiOutlineClockCircle,
+    icon: TbCalendarEventFilled,
     value: "endingSoon",
   },
   {
     label: "Recently Added",
-    icon: BsFillStopCircleFill,
+    icon: TbSortDescending2Filled,
     value: "new",
   },
 ];
