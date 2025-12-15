@@ -65,7 +65,7 @@ internal static class HostingExtensions
                 // Use a large chunk size for diagnostic data in development where it will be redirected to a local file.
                 if (builder.Environment.IsDevelopment()) options.Diagnostics.ChunkSize = 1024 * 1024 * 10; // 10 MB
 
-                if (builder.Environment.IsEnvironment("Docker")) options.IssuerUri = "https://localhost:5001";
+                if (builder.Environment.IsEnvironment("Docker")) options.IssuerUri = "http://localhost:5001";
             })
             .AddInMemoryIdentityResources(Config.IdentityResources)
             .AddInMemoryApiScopes(Config.ApiScopes)
