@@ -1,7 +1,14 @@
 @import "tailwindcss";
+
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 [role="button"], button {
     cursor: pointer;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
 }

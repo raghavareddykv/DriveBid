@@ -4,27 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add ESLint disable comment to fix useEffect dependency warning in Search component">
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/actions/authActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/api/auth/signin/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/LoginButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/UserActions.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/session/AuthTest.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/session/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/types/next-auth.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests.">
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/create/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DeleteButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DetailedSpecs.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/EditButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/update/[id]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/DateInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/Input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/providers/ToasterProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/IdentityService/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/IdentityService/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/IdentityService/HostingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/IdentityService/HostingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/init.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/init.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/components/EmptyFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/EmptyFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/UserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/UserActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/hooks/useParamsStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/hooks/useParamsStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1237" />
+    <option name="cachedIndexableFilesCount" value="1240" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -87,7 +91,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -126,6 +130,14 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SmartUpdateOptions">
+    <option name="map">
+      <entry key="build.project" value="true" />
+      <entry key="ide.update" value="true" />
+      <entry key="plugins.update" value="true" />
+      <entry key="vcs.update" value="true" />
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="" />
@@ -136,7 +148,8 @@
       <workItem from="1764878477943" duration="17207000" />
       <workItem from="1765311515366" duration="52000" />
       <workItem from="1765311599915" duration="7000" />
-      <workItem from="1765311641804" duration="30731000" />
+      <workItem from="1765311641804" duration="31964000" />
+      <workItem from="1765830350346" duration="20956000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
@@ -162,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765506761709</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests.">
+      <option name="closed" value="true" />
+      <created>1765829171610</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765829171610</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +195,8 @@
     <MESSAGE value="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets." />
     <MESSAGE value="Update Filters component with new icon imports and replacements&#10;&#10;Replaced outdated icons with new imports from `react-icons`. Cleaned up unused imports, ensuring consistency in design elements." />
     <MESSAGE value="Add ESLint disable comment to fix useEffect dependency warning in Search component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ESLint disable comment to fix useEffect dependency warning in Search component" />
+    <MESSAGE value="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
