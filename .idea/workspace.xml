@@ -4,31 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests.">
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DeleteButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DetailedSpecs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/EditButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/update/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/DateInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/providers/ToasterProvider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction.">
+      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Services/GrpcAuctionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/protos/auctions.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Consumers/AuctionCreatedConsumer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Controllers/BidsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/DTOs/BidDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/Auction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/Bid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/BidStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/RequestHelpers/MappingProfiles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Services/CheckAuctionFinished.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Services/GrpcAuctionClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/protos/auctions.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/Docker/docker-compose.generated.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/Docker/docker-compose.generated.override.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/init.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/.flowbite-react/init.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/UserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/UserActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/hooks/useParamsStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/hooks/useParamsStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriveBid.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/AuctionFinishedConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/AuctionFinishedConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/BidPlacedConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/BidPlacedConsumer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1240" />
+    <option name="cachedIndexableFilesCount" value="1325" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -62,6 +66,10 @@
     &quot;accountId&quot;: &quot;01f60694-7b47-4e4d-998c-0ac99c8a9e63&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -71,32 +79,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/raghavakv/Downloads/DriveBid",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -105,6 +114,13 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecapSpentCounter">
+    <option name="endsOfQuotaMs" value="1768255211929" />
+    <option name="spentUsd" value="0.0289926" />
+  </component>
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="0" />
   </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -126,7 +142,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
       </set>
     </attachedChunks>
   </component>
@@ -149,7 +165,11 @@
       <workItem from="1765311515366" duration="52000" />
       <workItem from="1765311599915" duration="7000" />
       <workItem from="1765311641804" duration="31964000" />
-      <workItem from="1765830350346" duration="20956000" />
+      <workItem from="1765830350346" duration="23857000" />
+      <workItem from="1766096339024" duration="2603000" />
+      <workItem from="1766115164209" duration="887000" />
+      <workItem from="1766170056813" duration="1447000" />
+      <workItem from="1766183582771" duration="3709000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
@@ -183,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765829171610</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction.">
+      <option name="closed" value="true" />
+      <created>1766034307628</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1766034307628</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +224,8 @@
     <MESSAGE value="Update Filters component with new icon imports and replacements&#10;&#10;Replaced outdated icons with new imports from `react-icons`. Cleaned up unused imports, ensuring consistency in design elements." />
     <MESSAGE value="Add ESLint disable comment to fix useEffect dependency warning in Search component" />
     <MESSAGE value="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests." />
+    <MESSAGE value="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

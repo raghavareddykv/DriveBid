@@ -3,6 +3,11 @@ WORKDIR /app
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive \
+    apt-get install --no-install-recommends --assume-yes \
+      protobuf-compiler-grpc
+ENV PROTOBUF_PROTOC=/usr/bin/protoc
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["backend/src/AuctionService/AuctionService.csproj", "backend/src/AuctionService/"]
