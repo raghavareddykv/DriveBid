@@ -4,7 +4,8 @@ import { NavBar } from "@/app/nav/NavBar";
 import { ReactNode } from "react";
 import { ToasterProvider } from "@/app/providers/ToasterProvider";
 import SignalRProvider from "@/app/providers/SignalRProvider";
-import { getCurrentUser } from "@/app/actions/authActions";
+import { ThemeInit } from "@/.flowbite-react/init";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "DriveBid",
@@ -16,18 +17,17 @@ export default async function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const user = await getCurrentUser();
-
   return (
     <html lang="en">
       <body>
-        <ToasterProvider />
-
-        <NavBar />
-
-        <main className="container mx-auto px-5 pt-10">
-          <SignalRProvider user={user}>{children}</SignalRProvider>
-        </main>
+        <SessionProvider>
+          <ThemeInit />
+          <ToasterProvider />
+          <NavBar />
+          <main className="container mx-auto px-5 pt-10">
+            <SignalRProvider>{children}</SignalRProvider>
+          </main>
+        </SessionProvider>
       </body>
     </html>
   );

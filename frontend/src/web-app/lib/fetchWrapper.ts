@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 
-const baseUrl = "http://localhost:6001";
+const baseUrl = process.env.API_URL;
 
 /**
  * Makes an asynchronous HTTP GET request to the provided URL.
