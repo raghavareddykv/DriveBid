@@ -4,17 +4,34 @@ import AuctionCard from "@/app/auctions/AuctionCard";
 import { AppPagination } from "@/app/components/AppPagination";
 import { getData } from "@/app/actions/auctionActions";
 import { useEffect, useState } from "react";
-import { Auction, PagedResult } from "@/types";
 import { Filters } from "@/app/auctions/Filters";
 import { useParamsStore } from "@/hooks/useParamsStore";
 import { useShallow } from "zustand/react/shallow";
 import qs from "query-string";
 import EmptyFilter from "@/app/components/EmptyFilter";
+import { useAuctionStore } from "@/hooks/useAuctionStore";
+import { Auction } from "@/types";
+
+type ParamsState = {
+  pageNumber: number;
+  pageSize: number;
+  searchTerm: string;
+  orderBy: string;
+  filterBy: string;
+  seller?: string;
+  winner?: string;
+};
+
+type AuctionsState = {
+  auctions: Auction[];
+  totalCount: number;
+  pageCount: number;
+};
 
 const Listings = () => {
-  const [data, setData] = useState<PagedResult<Auction>>();
+  const [loading, setLoading] = useState(true);
 
-  const params = useParamsStore(
+  const params: ParamsState = useParamsStore(
     useShallow((state) => ({
       pageNumber: state.pageNumber,
       pageSize: state.pageSize,
@@ -25,6 +42,16 @@ const Listings = () => {
       winner: state.winner,
     })),
   );
+
+  const data: AuctionsState = useAuctionStore(
+    useShallow((state) => ({
+      auctions: state.auctions,
+      totalCount: state.totalCount,
+      pageCount: state.pageCount,
+    })),
+  );
+
+  const setData = useAuctionStore((state) => state.setData);
 
   const setParams = useParamsStore((state) => state.setParams);
 
@@ -40,10 +67,11 @@ const Listings = () => {
   useEffect(() => {
     getData(url).then((data) => {
       setData(data);
+      setLoading(false);
     });
-  }, [url]);
+  }, [url, setData]);
 
-  if (!data) return <h3>Loading...</h3>;
+  if (loading) return <h3>Loading...</h3>;
 
   return (
     <>
@@ -54,7 +82,7 @@ const Listings = () => {
         <>
           <div className="grid grid-cols-4 gap-6">
             {data &&
-              data.results.map((auction) => {
+              data.auctions.map((auction) => {
                 return <AuctionCard auction={auction} key={auction.id} />;
               })}
           </div>

@@ -5,34 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction.">
-      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Services/GrpcAuctionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/protos/auctions.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Consumers/AuctionCreatedConsumer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Controllers/BidsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/DTOs/BidDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/Auction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/Bid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Models/BidStatus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/RequestHelpers/MappingProfiles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Services/CheckAuctionFinished.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/Services/GrpcAuctionClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/BiddingService/protos/auctions.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/Docker/docker-compose.generated.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/Docker/docker-compose.generated.override.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/CurrentBid.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/BidForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/BidItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/BidList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/AuctionCreatedToast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/components/AuctionFinishedToast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/app/providers/SignalRProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/hooks/useAuctionStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/hooks/useBidStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/lib/numberWithComma.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DriveBid.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/AuctionFinishedConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/AuctionFinishedConsumer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/BidPlacedConsumer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Consumers/BidPlacedConsumer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/actions/auctionActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/AuctionCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/CarImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/CarImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/CountdownTimer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/CountdownTimer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/Listings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DetailedSpecs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/DetailedSpecs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/auctions/details/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
