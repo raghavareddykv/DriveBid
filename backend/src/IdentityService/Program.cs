@@ -1,6 +1,5 @@
-using System.Globalization;
-using IdentityService;
 using Serilog;
+using Log = Serilog.Log;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(formatProvider: CultureInfo.InvariantCulture)
@@ -12,10 +11,7 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
-    var app = builder
-        .ConfigureLogging()
-        .ConfigureServices()
-        .ConfigurePipeline();
+    var app = builder.ConfigureLogging().ConfigureServices().ConfigurePipeline();
 
     SeedData.EnsureSeedData(app);
 

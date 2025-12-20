@@ -1,8 +1,3 @@
-using Duende.IdentityServer.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace IdentityService.Pages;
 
 public static class Extensions
@@ -10,7 +5,10 @@ public static class Extensions
     /// <summary>
     ///     Determines if the authentication scheme support signout.
     /// </summary>
-    internal static async Task<bool> GetSchemeSupportsSignOutAsync(this HttpContext context, string scheme)
+    internal static async Task<bool> GetSchemeSupportsSignOutAsync(
+        this HttpContext context,
+        string scheme
+    )
     {
         var provider = context.RequestServices.GetRequiredService<IAuthenticationHandlerProvider>();
         var handler = await provider.GetHandlerAsync(context, scheme);
@@ -23,7 +21,7 @@ public static class Extensions
     internal static bool IsNativeClient(this AuthorizationRequest context)
     {
         return !context.RedirectUri.StartsWith("https", StringComparison.Ordinal)
-               && !context.RedirectUri.StartsWith("http", StringComparison.Ordinal);
+            && !context.RedirectUri.StartsWith("http", StringComparison.Ordinal);
     }
 
     /// <summary>
@@ -43,9 +41,11 @@ public static class Extensions
     internal static bool IsRemote(this ConnectionInfo connection)
     {
         var localAddresses = new List<string?> { "127.0.0.1", "::1" };
-        if (connection.LocalIpAddress != null) localAddresses.Add(connection.LocalIpAddress.ToString());
+        if (connection.LocalIpAddress != null)
+            localAddresses.Add(connection.LocalIpAddress.ToString());
 
-        if (!localAddresses.Contains(connection.RemoteIpAddress?.ToString())) return true;
+        if (!localAddresses.Contains(connection.RemoteIpAddress?.ToString()))
+            return true;
 
         return false;
     }

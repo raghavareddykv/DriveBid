@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "backend\s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingService", "backend\src\BiddingService\BiddingService.csproj", "{A4A25811-CC5D-40A1-8FD8-D8DEF5D90781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "backend\src\NotificationService\NotificationService.csproj", "{528D0440-1A87-4AD8-AD72-39192D844A5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,18 @@ Global
 		{A4A25811-CC5D-40A1-8FD8-D8DEF5D90781}.Release|x64.Build.0 = Release|Any CPU
 		{A4A25811-CC5D-40A1-8FD8-D8DEF5D90781}.Release|x86.ActiveCfg = Release|Any CPU
 		{A4A25811-CC5D-40A1-8FD8-D8DEF5D90781}.Release|x86.Build.0 = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|x64.Build.0 = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Debug|x86.Build.0 = Debug|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|x64.ActiveCfg = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|x64.Build.0 = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{528D0440-1A87-4AD8-AD72-39192D844A5B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,5 +124,6 @@ Global
 		{B5D9FD99-2B4E-4D0D-9092-1C1B192D88A8} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 		{BC9503FA-0024-46C2-A2D5-53AE3FEE2ADF} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 		{A4A25811-CC5D-40A1-8FD8-D8DEF5D90781} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
+		{528D0440-1A87-4AD8-AD72-39192D844A5B} = {0F9113EE-888A-26D2-68B0-4A7D0A2A8745}
 	EndGlobalSection
 EndGlobal

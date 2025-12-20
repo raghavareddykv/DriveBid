@@ -1,5 +1,3 @@
-using System.Diagnostics.Metrics;
-
 namespace IdentityService.Pages;
 
 #pragma warning disable CA1034 // Nested types should not be visible
@@ -10,7 +8,9 @@ namespace IdentityService.Pages;
 /// </summary>
 public static class Telemetry
 {
-    private static readonly string ServiceVersion = typeof(Telemetry).Assembly.GetName().Version!.ToString();
+    private static readonly string ServiceVersion = typeof(Telemetry)
+        .Assembly.GetName()
+        .Version!.ToString();
 
     /// <summary>
     ///     Service name for telemetry.
@@ -27,13 +27,21 @@ public static class Telemetry
         /// </summary>
         private static readonly Meter Meter = new(ServiceName, ServiceVersion);
 
-        private static readonly Counter<long> ConsentCounter = Meter.CreateCounter<long>(Counters.Consent);
+        private static readonly Counter<long> ConsentCounter = Meter.CreateCounter<long>(
+            Counters.Consent
+        );
 
-        private static readonly Counter<long> GrantsRevokedCounter = Meter.CreateCounter<long>(Counters.GrantsRevoked);
+        private static readonly Counter<long> GrantsRevokedCounter = Meter.CreateCounter<long>(
+            Counters.GrantsRevoked
+        );
 
-        private static readonly Counter<long> UserLoginCounter = Meter.CreateCounter<long>(Counters.UserLogin);
+        private static readonly Counter<long> UserLoginCounter = Meter.CreateCounter<long>(
+            Counters.UserLogin
+        );
 
-        private static readonly Counter<long> UserLogoutCounter = Meter.CreateCounter<long>(Counters.UserLogout);
+        private static readonly Counter<long> UserLogoutCounter = Meter.CreateCounter<long>(
+            Counters.UserLogout
+        );
 
         /// <summary>
         ///     Helper method to increase <see cref="Counters.Consent" /> counter. The scopes
@@ -42,16 +50,22 @@ public static class Telemetry
         /// <param name="clientId">Client id</param>
         /// <param name="scopes">Scope names. Each element is added on it's own to the counter</param>
         /// <param name="remember">Remember consent granted</param>
-        public static void ConsentGranted(string clientId, IEnumerable<string> scopes, bool remember)
+        public static void ConsentGranted(
+            string clientId,
+            IEnumerable<string> scopes,
+            bool remember
+        )
         {
             ArgumentNullException.ThrowIfNull(scopes);
 
             foreach (var scope in scopes)
-                ConsentCounter.Add(1,
+                ConsentCounter.Add(
+                    1,
                     new KeyValuePair<string, object?>(Tags.Client, clientId),
                     new KeyValuePair<string, object?>(Tags.Scope, scope),
                     new KeyValuePair<string, object?>(Tags.Remember, remember),
-                    new KeyValuePair<string, object?>(Tags.Consent, TagValues.Granted));
+                    new KeyValuePair<string, object?>(Tags.Consent, TagValues.Granted)
+                );
         }
 
         /// <summary>
@@ -64,9 +78,12 @@ public static class Telemetry
         {
             ArgumentNullException.ThrowIfNull(scopes);
             foreach (var scope in scopes)
-                ConsentCounter.Add(1, new KeyValuePair<string, object?>(Tags.Client, clientId),
+                ConsentCounter.Add(
+                    1,
+                    new KeyValuePair<string, object?>(Tags.Client, clientId),
                     new KeyValuePair<string, object?>(Tags.Scope, scope),
-                    new KeyValuePair<string, object?>(Tags.Consent, TagValues.Denied));
+                    new KeyValuePair<string, object?>(Tags.Consent, TagValues.Denied)
+                );
         }
 
         /// <summary>
@@ -75,7 +92,10 @@ public static class Telemetry
         /// <param name="clientId">Client id to revoke for, or null for all.</param>
         public static void GrantsRevoked(string? clientId)
         {
-            GrantsRevokedCounter.Add(1, tag: new KeyValuePair<string, object?>(Tags.Client, clientId));
+            GrantsRevokedCounter.Add(
+                1,
+                tag: new KeyValuePair<string, object?>(Tags.Client, clientId)
+            );
         }
 
         /// <summary>
@@ -85,8 +105,11 @@ public static class Telemetry
         /// <param name="idp">Identity provider</param>
         public static void UserLogin(string? clientId, string idp)
         {
-            UserLoginCounter.Add(1, new KeyValuePair<string, object?>(Tags.Client, clientId),
-                new KeyValuePair<string, object?>(Tags.Idp, idp));
+            UserLoginCounter.Add(
+                1,
+                new KeyValuePair<string, object?>(Tags.Client, clientId),
+                new KeyValuePair<string, object?>(Tags.Idp, idp)
+            );
         }
 
         /// <summary>
@@ -97,8 +120,12 @@ public static class Telemetry
         /// <param name="error">Error message</param>
         public static void UserLoginFailure(string? clientId, string idp, string error)
         {
-            UserLoginCounter.Add(1, new KeyValuePair<string, object?>(Tags.Client, clientId),
-                new KeyValuePair<string, object?>(Tags.Idp, idp), new KeyValuePair<string, object?>(Tags.Error, error));
+            UserLoginCounter.Add(
+                1,
+                new KeyValuePair<string, object?>(Tags.Client, clientId),
+                new KeyValuePair<string, object?>(Tags.Idp, idp),
+                new KeyValuePair<string, object?>(Tags.Error, error)
+            );
         }
 
         /// <summary>

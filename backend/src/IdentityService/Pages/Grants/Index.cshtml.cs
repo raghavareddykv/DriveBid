@@ -1,11 +1,3 @@
-using Duende.IdentityServer.Events;
-using Duende.IdentityServer.Extensions;
-using Duende.IdentityServer.Services;
-using Duende.IdentityServer.Stores;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace IdentityService.Pages.Grants;
 
 [SecurityHeaders]
@@ -17,10 +9,12 @@ public class Index : PageModel
     private readonly IIdentityServerInteractionService _interaction;
     private readonly IResourceStore _resources;
 
-    public Index(IIdentityServerInteractionService interaction,
+    public Index(
+        IIdentityServerInteractionService interaction,
         IClientStore clients,
         IResourceStore resources,
-        IEventService events)
+        IEventService events
+    )
     {
         _interaction = interaction;
         _clients = clients;
@@ -30,7 +24,8 @@ public class Index : PageModel
 
     public ViewModel View { get; set; } = default!;
 
-    [BindProperty] public string? ClientId { get; set; }
+    [BindProperty]
+    public string? ClientId { get; set; }
 
     public async Task OnGet()
     {
@@ -53,18 +48,19 @@ public class Index : PageModel
                     Description = grant.Description,
                     Created = grant.CreationTime,
                     Expires = grant.Expiration,
-                    IdentityGrantNames = resources.IdentityResources.Select(x => x.DisplayName ?? x.Name).ToArray(),
-                    ApiGrantNames = resources.ApiScopes.Select(x => x.DisplayName ?? x.Name).ToArray()
+                    IdentityGrantNames = resources
+                        .IdentityResources.Select(x => x.DisplayName ?? x.Name)
+                        .ToArray(),
+                    ApiGrantNames = resources
+                        .ApiScopes.Select(x => x.DisplayName ?? x.Name)
+                        .ToArray(),
                 };
 
                 list.Add(item);
             }
         }
 
-        View = new ViewModel
-        {
-            Grants = list
-        };
+        View = new ViewModel { Grants = list };
     }
 
     public async Task<IActionResult> OnPost()

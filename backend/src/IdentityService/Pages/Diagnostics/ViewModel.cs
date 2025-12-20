@@ -1,8 +1,3 @@
-using System.Text;
-using System.Text.Json;
-using Duende.IdentityModel;
-using Microsoft.AspNetCore.Authentication;
-
 namespace IdentityService.Pages.Diagnostics;
 
 public class ViewModel

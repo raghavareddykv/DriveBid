@@ -1,12 +1,8 @@
-using Duende.IdentityServer.Models;
-
 namespace IdentityService.Pages.Error;
 
 public class ViewModel
 {
-    public ViewModel()
-    {
-    }
+    public ViewModel() { }
 
     public ViewModel(string error)
     {

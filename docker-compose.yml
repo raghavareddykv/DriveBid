@@ -145,6 +145,19 @@ services:
         condition: service_healthy
       rabbitmq:
         condition: service_healthy
+        
+  # Notification Service
+  notify-svc:
+    image: raghavareddykv/notify-svc:latest
+    build:
+      context: .
+      dockerfile: backend/src/NotificationService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - RabbitMq__Host=rabbitmq
+    ports:
+      - 7004:80
 
 volumes:
   pgdata:

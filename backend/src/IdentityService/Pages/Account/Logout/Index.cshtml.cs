@@ -1,15 +1,3 @@
-using Duende.IdentityModel;
-using Duende.IdentityServer;
-using Duende.IdentityServer.Events;
-using Duende.IdentityServer.Extensions;
-using Duende.IdentityServer.Services;
-using IdentityService.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace IdentityService.Pages.Logout;
 
 [SecurityHeaders]
@@ -20,15 +8,19 @@ public class Index : PageModel
     private readonly IIdentityServerInteractionService _interaction;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public Index(SignInManager<ApplicationUser> signInManager, IIdentityServerInteractionService interaction,
-        IEventService events)
+    public Index(
+        SignInManager<ApplicationUser> signInManager,
+        IIdentityServerInteractionService interaction,
+        IEventService events
+    )
     {
         _signInManager = signInManager;
         _interaction = interaction;
         _events = events;
     }
 
-    [BindProperty] public string? LogoutId { get; set; }
+    [BindProperty]
+    public string? LogoutId { get; set; }
 
     public async Task<IActionResult> OnGet(string? logoutId)
     {
@@ -73,7 +65,9 @@ public class Index : PageModel
             var idp = User.FindFirst(JwtClaimTypes.IdentityProvider)?.Value;
 
             // raise the logout event
-            await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()));
+            await _events.RaiseAsync(
+                new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName())
+            );
             Telemetry.Metrics.UserLogout(idp);
 
             // if it's a local login we can ignore this workflow

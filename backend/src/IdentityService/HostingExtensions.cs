@@ -1,9 +1,3 @@
-using System.Globalization;
-using IdentityService.Data;
-using IdentityService.Models;
-using IdentityService.Services;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Filters;
 
@@ -15,31 +9,40 @@ internal static class HostingExtensions
     {
         // Write most logs to the console but diagnostic data to a file.
         // See https://docs.duendesoftware.com/identityserver/diagnostics/data
-        builder.Host.UseSerilog((ctx, lc) =>
-        {
-            lc.WriteTo.Logger(consoleLogger =>
+        builder.Host.UseSerilog(
+            (ctx, lc) =>
             {
-                consoleLogger.WriteTo.Console(
-                    outputTemplate:
-                    "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                    formatProvider: CultureInfo.InvariantCulture);
-                if (builder.Environment.IsDevelopment())
-                    consoleLogger.Filter.ByExcluding(Matching.FromSource("Duende.IdentityServer.Diagnostics.Summary"));
-            });
-            if (builder.Environment.IsDevelopment())
-                lc.WriteTo.Logger(fileLogger =>
+                lc.WriteTo.Logger(consoleLogger =>
                 {
-                    fileLogger
-                        .WriteTo.File("./diagnostics/diagnostic.log", rollingInterval: RollingInterval.Day,
-                            fileSizeLimitBytes: 1024 * 1024 * 10, // 10 MB
-                            rollOnFileSizeLimit: true,
-                            outputTemplate:
-                            "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                            formatProvider: CultureInfo.InvariantCulture)
-                        .Filter
-                        .ByIncludingOnly(Matching.FromSource("Duende.IdentityServer.Diagnostics.Summary"));
-                }).Enrich.FromLogContext().ReadFrom.Configuration(ctx.Configuration);
-        });
+                    consoleLogger.WriteTo.Console(
+                        outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
+                        formatProvider: CultureInfo.InvariantCulture
+                    );
+                    if (builder.Environment.IsDevelopment())
+                        consoleLogger.Filter.ByExcluding(
+                            Matching.FromSource("Duende.IdentityServer.Diagnostics.Summary")
+                        );
+                });
+                if (builder.Environment.IsDevelopment())
+                    lc.WriteTo.Logger(fileLogger =>
+                        {
+                            fileLogger
+                                .WriteTo.File(
+                                    "./diagnostics/diagnostic.log",
+                                    rollingInterval: RollingInterval.Day,
+                                    fileSizeLimitBytes: 1024 * 1024 * 10, // 10 MB
+                                    rollOnFileSizeLimit: true,
+                                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
+                                    formatProvider: CultureInfo.InvariantCulture
+                                )
+                                .Filter.ByIncludingOnly(
+                                    Matching.FromSource("Duende.IdentityServer.Diagnostics.Summary")
+                                );
+                        })
+                        .Enrich.FromLogContext()
+                        .ReadFrom.Configuration(ctx.Configuration);
+            }
+        );
         return builder;
     }
 
@@ -48,14 +51,16 @@ internal static class HostingExtensions
         builder.Services.AddRazorPages();
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+        );
 
-        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+        builder
+            .Services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        builder.Services
-            .AddIdentityServer(options =>
+        builder
+            .Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
@@ -63,9 +68,11 @@ internal static class HostingExtensions
                 options.Events.RaiseSuccessEvents = true;
 
                 // Use a large chunk size for diagnostic data in development where it will be redirected to a local file.
-                if (builder.Environment.IsDevelopment()) options.Diagnostics.ChunkSize = 1024 * 1024 * 10; // 10 MB
+                if (builder.Environment.IsDevelopment())
+                    options.Diagnostics.ChunkSize = 1024 * 1024 * 10; // 10 MB
 
-                if (builder.Environment.IsEnvironment("Docker")) options.IssuerUri = "http://localhost:5001";
+                if (builder.Environment.IsEnvironment("Docker"))
+                    options.IssuerUri = "http://localhost:5001";
             })
             .AddInMemoryIdentityResources(Config.IdentityResources)
             .AddInMemoryApiScopes(Config.ApiScopes)
@@ -73,7 +80,10 @@ internal static class HostingExtensions
             .AddAspNetIdentity<ApplicationUser>()
             .AddProfileService<CustomProfileService>();
 
-        builder.Services.ConfigureApplicationCookie(options => { options.Cookie.SameSite = SameSiteMode.Lax; });
+        builder.Services.ConfigureApplicationCookie(options =>
+        {
+            options.Cookie.SameSite = SameSiteMode.Lax;
+        });
 
         builder.Services.AddAuthentication();
 
@@ -84,7 +94,8 @@ internal static class HostingExtensions
     {
         app.UseSerilogRequestLogging();
 
-        if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
+        if (app.Environment.IsDevelopment())
+            app.UseDeveloperExceptionPage();
 
         app.UseStaticFiles();
         app.UseRouting();

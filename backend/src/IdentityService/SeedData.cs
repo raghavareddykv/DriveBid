@@ -1,10 +1,4 @@
-using System.Security.Claims;
-using Duende.IdentityModel;
-using IdentityService.Data;
-using IdentityService.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
+using Log = Serilog.Log;
 
 namespace IdentityService;
 
@@ -17,9 +11,10 @@ public class SeedData
         context.Database.Migrate();
 
         var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-        
-        if (userMgr.Users.Any()) return;
-        
+
+        if (userMgr.Users.Any())
+            return;
+
         var alice = userMgr.FindByNameAsync("alice").Result;
         if (alice == null)
         {
@@ -27,15 +22,17 @@ public class SeedData
             {
                 UserName = "alice",
                 Email = "AliceSmith@example.com",
-                EmailConfirmed = true
+                EmailConfirmed = true,
             };
             var result = userMgr.CreateAsync(alice, "Pass123$").Result;
-            if (!result.Succeeded) throw new Exception(result.Errors.First().Description);
+            if (!result.Succeeded)
+                throw new Exception(result.Errors.First().Description);
 
-            result = userMgr.AddClaimsAsync(alice, [
-                new Claim(JwtClaimTypes.Name, "Alice Smith"),
-            ]).Result;
-            if (!result.Succeeded) throw new Exception(result.Errors.First().Description);
+            result = userMgr
+                .AddClaimsAsync(alice, [new Claim(JwtClaimTypes.Name, "Alice Smith")])
+                .Result;
+            if (!result.Succeeded)
+                throw new Exception(result.Errors.First().Description);
             Log.Debug("alice created");
         }
         else
@@ -50,15 +47,17 @@ public class SeedData
             {
                 UserName = "bob",
                 Email = "BobSmith@example.com",
-                EmailConfirmed = true
+                EmailConfirmed = true,
             };
             var result = userMgr.CreateAsync(bob, "Pass123$").Result;
-            if (!result.Succeeded) throw new Exception(result.Errors.First().Description);
+            if (!result.Succeeded)
+                throw new Exception(result.Errors.First().Description);
 
-            result = userMgr.AddClaimsAsync(bob, [
-                new Claim(JwtClaimTypes.Name, "Bob Smith")
-            ]).Result;
-            if (!result.Succeeded) throw new Exception(result.Errors.First().Description);
+            result = userMgr
+                .AddClaimsAsync(bob, [new Claim(JwtClaimTypes.Name, "Bob Smith")])
+                .Result;
+            if (!result.Succeeded)
+                throw new Exception(result.Errors.First().Description);
             Log.Debug("bob created");
         }
         else
