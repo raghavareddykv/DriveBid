@@ -1,8 +1,8 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
     apt-get install --no-install-recommends --assume-yes \
@@ -12,6 +12,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["backend/src/AuctionService/AuctionService.csproj", "backend/src/AuctionService/"]
 COPY ["backend/src/Contracts/Contracts.csproj", "backend/src/Contracts/"]
+COPY ["backend/tests/AuctionService.Tests.Unit/AuctionService.Tests.Unit.csproj", "backend/tests/AuctionService.Tests.Unit/"]
+COPY ["backend/tests/AuctionService.Tests.Integration/AuctionService.Tests.Integration.csproj", "backend/tests/AuctionService.Tests.Integration/"]
 RUN dotnet restore "backend/src/AuctionService/AuctionService.csproj"
 COPY . .
 WORKDIR "/src/backend/src/AuctionService"

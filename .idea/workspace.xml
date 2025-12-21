@@ -4,21 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add bidding functionality and real-time notifications for auctions&#10;&#10;Implements bid management in the frontend with a `useBidStore` Zustand store, `BidList`, and `BidForm` components. Integrates real-time bid updates and auction notifications using SignalR. Enhances auction details view, adds high bid tracking, and updates UI with components for current bids and auction states. Refactors layout for SignalR provider and adds dependencies (`@microsoft/signalr`, `date-fns`).">
-      <change afterPath="$PROJECT_DIR$/frontend/src/web-app/Dockerfile" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add support for production-ready authentication, configuration, and deployment settings&#10;&#10;Integrates environment-based settings for IdentityServer and frontend, enabling dynamic URLs and credentials. Refactors authentication flow with NextAuth.js session handling, backend configuration updates, and secure SSL certificates. Adds Dockerized builds for web and services with Nginx proxy support for streamlined deployment.">
+      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Data/AuctionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Data/IAuctionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/AuctionBusTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/AuctionControllerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Fixtures/CustomWebAppFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/IAuctionBusTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/IAuctionControllerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/AuthHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/DbHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/AuctionControllerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/IAuctionControllerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/Utils/Helpers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/IdentityService/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/IdentityService/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/IdentityService/HostingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/IdentityService/HostingExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/IdentityService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/IdentityService/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/api/auth/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/api/auth/signin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/nav/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/nav/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/providers/SignalRProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/providers/SignalRProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/lib/fetchWrapper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/proxy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriveBid.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Controllers/AuctionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Controllers/AuctionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Entities/Auction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Entities/Auction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/Contracts/Contracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/Contracts/Contracts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/GatewayService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/GatewayService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/SearchService/SearchService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/SearchService/SearchService.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1325" />
+    <option name="cachedIndexableFilesCount" value="929" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -52,10 +62,10 @@
     &quot;accountId&quot;: &quot;01f60694-7b47-4e4d-998c-0ac99c8a9e63&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -69,34 +79,34 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/raghavakv/Downloads/DriveBid",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid/frontend/src/web-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -108,10 +118,10 @@
   </component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1768255211929" />
-    <option name="spentUsd" value="0.05018685" />
+    <option name="spentUsd" value="0.069908895" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="9" />
+    <option name="suspendCountdown" value="5" />
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -172,6 +182,7 @@
       <workItem from="1766115164209" duration="887000" />
       <workItem from="1766170056813" duration="1447000" />
       <workItem from="1766183582771" duration="3709000" />
+      <workItem from="1766256006210" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
@@ -221,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766215638361</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add support for production-ready authentication, configuration, and deployment settings&#10;&#10;Integrates environment-based settings for IdentityServer and frontend, enabling dynamic URLs and credentials. Refactors authentication flow with NextAuth.js session handling, backend configuration updates, and secure SSL certificates. Adds Dockerized builds for web and services with Nginx proxy support for streamlined deployment.">
+      <option name="closed" value="true" />
+      <created>1766222109403</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766222109403</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +255,8 @@
     <MESSAGE value="Add NextAuth.js authentication with IdentityServer integration  &#10;&#10;Integrates NextAuth.js into the frontend for authentication using IdentityServer. Adds SignIn and session management features, with session callbacks for token handling. Updates backend IdentityService with token and claim configuration. Includes adjustments across middleware, NavBar, and action components to support user sessions and secure API requests." />
     <MESSAGE value="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction." />
     <MESSAGE value="Add bidding functionality and real-time notifications for auctions&#10;&#10;Implements bid management in the frontend with a `useBidStore` Zustand store, `BidList`, and `BidForm` components. Integrates real-time bid updates and auction notifications using SignalR. Enhances auction details view, adds high bid tracking, and updates UI with components for current bids and auction states. Refactors layout for SignalR provider and adds dependencies (`@microsoft/signalr`, `date-fns`)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add bidding functionality and real-time notifications for auctions&#10;&#10;Implements bid management in the frontend with a `useBidStore` Zustand store, `BidList`, and `BidForm` components. Integrates real-time bid updates and auction notifications using SignalR. Enhances auction details view, adds high bid tracking, and updates UI with components for current bids and auction states. Refactors layout for SignalR provider and adds dependencies (`@microsoft/signalr`, `date-fns`)." />
+    <MESSAGE value="Add support for production-ready authentication, configuration, and deployment settings&#10;&#10;Integrates environment-based settings for IdentityServer and frontend, enabling dynamic URLs and credentials. Refactors authentication flow with NextAuth.js session handling, backend configuration updates, and secure SSL certificates. Adds Dockerized builds for web and services with Nginx proxy support for streamlined deployment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add support for production-ready authentication, configuration, and deployment settings&#10;&#10;Integrates environment-based settings for IdentityServer and frontend, enabling dynamic URLs and credentials. Refactors authentication flow with NextAuth.js session handling, backend configuration updates, and secure SSL certificates. Adds Dockerized builds for web and services with Nginx proxy support for streamlined deployment." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

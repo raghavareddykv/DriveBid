@@ -28,19 +28,25 @@ builder.Services.AddMassTransit(x =>
         o.UseBusOutbox();
     });
 
-    x.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", h =>
+    x.UsingRabbitMq(
+        (context, cfg) =>
         {
-            h.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
-            h.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
-        });
-        cfg.ConfigureEndpoints(context);
-    });
+            cfg.Host(
+                builder.Configuration["RabbitMq:Host"],
+                "/",
+                h =>
+                {
+                    h.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+                    h.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+                }
+            );
+            cfg.ConfigureEndpoints(context);
+        }
+    );
 });
 
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder
+    .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.Authority = builder.Configuration["IdentityServiceUrl"];
@@ -48,6 +54,8 @@ builder.Services
         options.TokenValidationParameters.ValidateAudience = false;
         options.TokenValidationParameters.NameClaimType = "username";
     });
+
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 
 builder.Services.AddGrpc();
 
@@ -73,3 +81,5 @@ catch (Exception e)
 }
 
 app.Run();
+
+public partial class Program;
