@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add support for production-ready authentication, configuration, and deployment settings&#10;&#10;Integrates environment-based settings for IdentityServer and frontend, enabling dynamic URLs and credentials. Refactors authentication flow with NextAuth.js session handling, backend configuration updates, and secure SSL certificates. Adds Dockerized builds for web and services with Nginx proxy support for streamlined deployment.">
-      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Data/AuctionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/AuctionService/Data/IAuctionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/AuctionBusTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/AuctionControllerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Fixtures/CustomWebAppFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/IAuctionBusTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/IAuctionControllerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/AuthHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/DbHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Integration/Util/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/AuctionControllerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/IAuctionControllerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/AuctionService.Tests.Unit/Utils/Helpers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DriveBid.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/DriveBid.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/AuctionService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Controllers/AuctionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Controllers/AuctionsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Entities/Auction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Entities/Auction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/AuctionService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/Contracts/Contracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/Contracts/Contracts.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/GatewayService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/GatewayService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/SearchService/SearchService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/SearchService/SearchService.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,10 +95,10 @@
   </component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1768255211929" />
-    <option name="spentUsd" value="0.069908895" />
+    <option name="spentUsd" value="0.07946739" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="5" />
+    <option name="suspendCountdown" value="4" />
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -182,7 +159,7 @@
       <workItem from="1766115164209" duration="887000" />
       <workItem from="1766170056813" duration="1447000" />
       <workItem from="1766183582771" duration="3709000" />
-      <workItem from="1766256006210" duration="2305000" />
+      <workItem from="1766256006210" duration="2916000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
