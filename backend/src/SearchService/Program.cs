@@ -50,15 +50,10 @@ app.MapControllers();
 
 app.Lifetime.ApplicationStarted.Register(async void () =>
 {
-    try
-    {
-        // Initialize database
-        await DbInitializer.InitDb(app);
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine(e);
-    }
+    await Policy
+        .Handle<TimeoutException>()
+        .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(5))
+        .ExecuteAndCaptureAsync(async () => await DbInitializer.InitDb(app));
 });
 
 app.Run();

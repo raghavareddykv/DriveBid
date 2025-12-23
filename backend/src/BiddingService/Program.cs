@@ -4,6 +4,7 @@ using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MongoDB.Driver;
 using MongoDB.Entities;
+using Polly;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,19 +17,25 @@ builder.Services.AddMassTransit(x =>
 
     x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("bids", false));
 
-    x.UsingRabbitMq((context, cfg) =>
-    {
-        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", h =>
+    x.UsingRabbitMq(
+        (context, cfg) =>
         {
-            h.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
-            h.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
-        });
-        cfg.ConfigureEndpoints(context);
-    });
+            cfg.Host(
+                builder.Configuration["RabbitMq:Host"],
+                "/",
+                h =>
+                {
+                    h.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+                    h.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+                }
+            );
+            cfg.ConfigureEndpoints(context);
+        }
+    );
 });
 
-builder.Services
-    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder
+    .Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.Authority = builder.Configuration["IdentityServiceUrl"];
@@ -44,11 +51,18 @@ builder.Services.AddScoped<GrpcAuctionClient>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.MapControllers();
 
-// Initialize database
-await DB.InitAsync("BidDb",
-    MongoClientSettings.FromConnectionString(builder.Configuration.GetConnectionString("BidDbConnection")));
+await Policy
+    .Handle<TimeoutException>()
+    .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(5))
+    .ExecuteAndCaptureAsync(async () =>
+        await DB.InitAsync(
+            "BidDb",
+            MongoClientSettings.FromConnectionString(
+                builder.Configuration.GetConnectionString("BidDbConnection")
+            )
+        )
+    );
 
 app.Run();
