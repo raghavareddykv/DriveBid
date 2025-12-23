@@ -73,3 +73,4 @@ data:
   ID_URL_INTERNAL: http://identity-clusterip
   AUTH_URL: https://app.drivebid.local
   AUTH_URL_INTERNAL: http://webapp-clusterip:3000
+  NEXT_PUBLIC_NOTIFY_URL: https://api.drivebid.local/notifications

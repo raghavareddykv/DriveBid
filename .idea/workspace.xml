@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance.">
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration.">
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +269,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766465490479</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update AspNetCore log level in GatewayService appsettings.json&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency across services.">
+      <option name="closed" value="true" />
+      <created>1766465780567</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1766465780567</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration.">
+      <option name="closed" value="true" />
+      <created>1766465910554</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766465910554</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +309,9 @@
     <MESSAGE value="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency." />
     <MESSAGE value="Update log level for AspNetCore in GatewayService Docker configuration&#10;&#10;Changes the log level for `Microsoft.AspNetCore` from `Information` to `Warning` in `appsettings.Docker.json` to reduce verbosity in logs." />
     <MESSAGE value="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance." />
+    <MESSAGE value="Update AspNetCore log level in GatewayService appsettings.json&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency across services." />
+    <MESSAGE value="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
