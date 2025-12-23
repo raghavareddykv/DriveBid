@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration.">
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/db-forest-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/db-forest-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/gateway-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/gateway-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/ingress-svc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dev-k8s/ingress-svc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/search-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/search-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1896" />
+    <option name="cachedIndexableFilesCount" value="1917" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -41,15 +55,19 @@
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;configuredContexts&quot;: [
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "configuredContexts": [
     {
-      &quot;name&quot;: &quot;docker-desktop&quot;,
-      &quot;kubeConfigUrl&quot;: &quot;file:///Users/raghavakv/.kube/config&quot;
+      "name": "do-sfo2-drivebid",
+      "kubeConfigUrl": "file:///Users/raghavakv/.kube/config"
+    },
+    {
+      "name": "docker-desktop",
+      "kubeConfigUrl": "file:///Users/raghavakv/.kube/config"
     }
   ],
-  &quot;isMigrated&quot;: true
-}</component>
+  "isMigrated": true
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -76,7 +94,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raghavakv/Downloads/DriveBid/infra/prod-k8s&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -102,9 +120,20 @@
   </component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1768255211929" />
-    <option name="spentUsd" value="0.09807325" />
+    <option name="spentUsd" value="0.1509538" />
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RecapUselessUpdatesCounter">
+    <option name="suspendCountdown" value="3" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infra/prod-k8s" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infra/dev-k8s" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/src/web-app/package.json" />
       <command value="run" />
@@ -127,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +193,8 @@
       <workItem from="1766170056813" duration="1447000" />
       <workItem from="1766183582771" duration="3709000" />
       <workItem from="1766256006210" duration="12099000" />
+      <workItem from="1766473176111" duration="5813000" />
+      <workItem from="1766518315418" duration="3247000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
@@ -285,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766465910554</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration.">
+      <option name="closed" value="true" />
+      <created>1766466240844</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766466240844</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +350,8 @@
     <MESSAGE value="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance." />
     <MESSAGE value="Update AspNetCore log level in GatewayService appsettings.json&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency across services." />
     <MESSAGE value="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration." />
+    <MESSAGE value="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

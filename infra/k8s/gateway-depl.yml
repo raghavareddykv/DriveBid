@@ -13,8 +13,7 @@ spec:
     spec:
       containers:
         - name: gateway-svc
-          image: raghavareddykv/gateway-svc
-          imagePullPolicy: Never
+          image: raghavareddykv/gateway-svc:latest
           envFrom:
             - configMapRef:
                 name: gateway-svc-config
