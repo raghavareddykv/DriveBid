@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency.">
-      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance.">
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1766465104828</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update log level for AspNetCore in GatewayService Docker configuration&#10;&#10;Changes the log level for `Microsoft.AspNetCore` from `Information` to `Warning` in `appsettings.Docker.json` to reduce verbosity in logs.">
+      <option name="closed" value="true" />
+      <created>1766465362297</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1766465362297</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance.">
+      <option name="closed" value="true" />
+      <created>1766465490479</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1766465490479</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +290,9 @@
     <MESSAGE value="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security." />
     <MESSAGE value="Add services to deployment workflow for CI/CD&#10;&#10;Includes SearchService, IdentityService, GatewayService, BiddingService, NotificationService, and WebApp in deployment pipeline." />
     <MESSAGE value="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency." />
+    <MESSAGE value="Update log level for AspNetCore in GatewayService Docker configuration&#10;&#10;Changes the log level for `Microsoft.AspNetCore` from `Information` to `Warning` in `appsettings.Docker.json` to reduce verbosity in logs." />
+    <MESSAGE value="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update AspNetCore log level in BiddingService and refine CI workflow&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency. Updates deployment workflow to limit Git history depth for optimized CI performance." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
