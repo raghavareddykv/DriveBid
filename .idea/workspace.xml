@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/db-forest-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DriveBid/.idea/db-forest-config.xml" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Update Kubernetes configurations and container images&#10;&#10;Standardizes container images to use the `latest` tag across services and adds DigitalOcean-specific Ingress deployment. Synchronizes `ingress-svc.yml` for production and development. Updates `.gitignore` to include secret files and tweaks frontend dependencies for compatibility.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/gateway-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/gateway-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/ingress-svc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/dev-k8s/ingress-svc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/search-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/search-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/prod-k8s/ingress-svc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/prod-k8s/ingress-svc.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,10 +106,10 @@
   </component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1768255211929" />
-    <option name="spentUsd" value="0.1509538" />
+    <option name="spentUsd" value="0.1582773" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="3" />
+    <option name="suspendCountdown" value="2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -194,7 +180,7 @@
       <workItem from="1766183582771" duration="3709000" />
       <workItem from="1766256006210" duration="12099000" />
       <workItem from="1766473176111" duration="5813000" />
-      <workItem from="1766518315418" duration="3247000" />
+      <workItem from="1766518315418" duration="4649000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial React web app setup with Tailwind, Flowbite, Next.js, and configuration files&#10;&#10;Includes base `.gitignore`, `.prettier{rc,ignore}`, ESLint configuration, initial Next.js setup with TypeScript, Tailwind CSS, and Flowbite React integration. Adds basic app structure, layout, and necessary assets.">
       <option name="closed" value="true" />
@@ -324,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766466240844</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update Kubernetes configurations and container images&#10;&#10;Standardizes container images to use the `latest` tag across services and adds DigitalOcean-specific Ingress deployment. Synchronizes `ingress-svc.yml` for production and development. Updates `.gitignore` to include secret files and tweaks frontend dependencies for compatibility.">
+      <option name="closed" value="true" />
+      <created>1766525672187</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1766525672187</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +345,8 @@
     <MESSAGE value="Update AspNetCore log level in GatewayService appsettings.json&#10;&#10;Adjusts `Microsoft.AspNetCore` log level to `Information` in `appsettings.json` for consistency across services." />
     <MESSAGE value="Update log levels in appsettings.json across services&#10;&#10;Adjusts `Microsoft.AspNetCore` log levels in multiple services (`NotificationService`, `BiddingService`, `AuctionService`, `GatewayService`, `SearchService`, `IdentityService`) for consistent logging configuration." />
     <MESSAGE value="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update frontend dependencies and Kubernetes config&#10;&#10;Synchronizes package versions in `package.json` for consistency and adds `NEXT_PUBLIC_NOTIFY_URL` to Kubernetes configuration." />
+    <MESSAGE value="Update Kubernetes configurations and container images&#10;&#10;Standardizes container images to use the `latest` tag across services and adds DigitalOcean-specific Ingress deployment. Synchronizes `ingress-svc.yml` for production and development. Updates `.gitignore` to include secret files and tweaks frontend dependencies for compatibility." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Kubernetes configurations and container images&#10;&#10;Standardizes container images to use the `latest` tag across services and adds DigitalOcean-specific Ingress deployment. Synchronizes `ingress-svc.yml` for production and development. Updates `.gitignore` to include secret files and tweaks frontend dependencies for compatibility." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
