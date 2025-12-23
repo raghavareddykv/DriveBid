@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes.">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/dev-k8s/dev-secrets.yml" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security.">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/local-pvc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/local-pvc.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/mongo-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/mongo-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/postgres-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/postgres-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/rabbit-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/rabbit-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/search-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/search-depl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,9 +103,6 @@
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1768255211929" />
     <option name="spentUsd" value="0.09807325" />
-  </component>
-  <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="0" />
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -244,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766452093031</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security.">
+      <option name="closed" value="true" />
+      <created>1766463844231</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1766463844231</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +256,8 @@
     <MESSAGE value="Add production-ready authentication and deployment updates, including environment-specific configurations, dynamic URLs, backend improvements, and Dockerized builds with Nginx proxy support." />
     <MESSAGE value="Remove Kubernetes manifests for all services and related configurations" />
     <MESSAGE value="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes." />
+    <MESSAGE value="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security." />
+    <option name="LAST_COMMIT_MESSAGE" value="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
