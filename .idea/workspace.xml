@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add services to deployment workflow for CI/CD&#10;&#10;Includes SearchService, IdentityService, GatewayService, BiddingService, NotificationService, and WebApp in deployment pipeline.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency.">
+      <change beforePath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/GatewayService/appsettings.Docker.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766464481390</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency.">
+      <option name="closed" value="true" />
+      <created>1766465104828</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1766465104828</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +273,8 @@
     <MESSAGE value="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes." />
     <MESSAGE value="Secure configuration management using Kubernetes secrets&#10;&#10;Replaces hardcoded sensitive data in deployment manifests with Kubernetes secrets. Updates services (e.g., RabbitMQ, MongoDB, PostgreSQL) to fetch credentials dynamically. Adjusts environment variable configurations across deployments for enhanced security." />
     <MESSAGE value="Add services to deployment workflow for CI/CD&#10;&#10;Includes SearchService, IdentityService, GatewayService, BiddingService, NotificationService, and WebApp in deployment pipeline." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add services to deployment workflow for CI/CD&#10;&#10;Includes SearchService, IdentityService, GatewayService, BiddingService, NotificationService, and WebApp in deployment pipeline." />
+    <MESSAGE value="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add conditional build logic to deployment workflow&#10;&#10;Adds a check to skip Docker build and push steps if no changes are detected in the service path. Updates `.github/workflows/deploy.yml` for improved CI/CD efficiency." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
