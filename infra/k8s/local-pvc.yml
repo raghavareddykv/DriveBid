@@ -9,6 +9,7 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
+
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -21,6 +22,7 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
+
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

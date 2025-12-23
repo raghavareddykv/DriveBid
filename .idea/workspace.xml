@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add production-ready authentication and deployment updates, including environment-specific configurations, dynamic URLs, backend improvements, and Dockerized builds with Nginx proxy support.">
-      <change afterPath="$PROJECT_DIR$/infra/devcerts/create-k8s-secret.sh" afterDir="false" />
+    <list default="true" id="a6718fe2-d542-4608-b433-3589a43159b4" name="Changes" comment="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes.">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/dev-k8s/dev-secrets.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/auction-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/bid-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/identity-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/local-pvc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/local-pvc.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/mongo-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/mongo-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/notify-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/postgres-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/postgres-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/rabbit-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/rabbit-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/search-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/search-depl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/webapp-depl.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766222109403</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes.">
+      <option name="closed" value="true" />
+      <created>1766452093031</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766452093031</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,9 +260,10 @@
     <MESSAGE value="Add auction creation, update, and delete workflows with detailed views&#10;&#10;Implements auction creation, update, and delete functionality in the frontend, including `AuctionForm` component, `DeleteButton`, and detailed view pages. Adds routing for auction operations, introduces reusable components `Input` and `DateInput`, and centralizes API logic with `fetchWrapper`. Integrates React Hook Form, DatePicker, and toast notifications for enhanced user interaction." />
     <MESSAGE value="Add bidding functionality and real-time notifications for auctions&#10;&#10;Implements bid management in the frontend with a `useBidStore` Zustand store, `BidList`, and `BidForm` components. Integrates real-time bid updates and auction notifications using SignalR. Enhances auction details view, adds high bid tracking, and updates UI with components for current bids and auction states. Refactors layout for SignalR provider and adds dependencies (`@microsoft/signalr`, `date-fns`)." />
     <MESSAGE value="Add production-ready authentication and deployment updates, including environment-specific configurations, dynamic URLs, backend improvements, and Dockerized builds with Nginx proxy support." />
-    <MESSAGE value="Remove Kubernetes manifests for all services and related configurations" />
     <MESSAGE value="Add production-ready authentication and deployment updates, including environment-specific configurations, dynamic URLs, backend improvements, and Dockerized builds with Nginx proxy support." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add production-ready authentication and deployment updates, including environment-specific configurations, dynamic URLs, backend improvements, and Dockerized builds with Nginx proxy support." />
+    <MESSAGE value="Remove Kubernetes manifests for all services and related configurations" />
+    <MESSAGE value="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add script to generate Kubernetes TLS secret for DriveBid app&#10;&#10;Adds `create-k8s-secret.sh` to simplify the creation of Kubernetes TLS secrets using provided key and certificate files. Updates `.idea/workspace.xml` to reflect recent changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
